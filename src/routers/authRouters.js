@@ -3,6 +3,8 @@ const authRouters = express();
 const authController = require("../controllers/authController.js")
 
 authRouters.post("/register", authController.handleRegister);
-authRouters.post("/login", (req, res) => res.send("Ini Register"));
+authRouters.get("/login", authController.handleLogin);
 
 module.exports = authRouters
+
+//(req, res) => res.send("Ini Register")
