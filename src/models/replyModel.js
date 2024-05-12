@@ -1,13 +1,12 @@
 const mongoose = require("mongoose");
 
-const Schema = mongoose.Schema;
+const {Schema} = mongoose;
 
 
 //Blueprint / Schema
  const replySchema = new Schema({
-    userId: {type: Schema.Types.ObjectId, ref: "Auth"},
+    //userId: {type: Schema.Types.ObjectId, ref: "User"},
     threadId: {type: Schema.Types.ObjectId, ref: "Thread"},
-    threadId: String,
     title:String,
     content: String,
 });
@@ -15,4 +14,4 @@ const Schema = mongoose.Schema;
 //Model / Table
 const Reply = mongoose.model("Reply", replySchema);
 
-module.exports = { Reply }
+module.exports = Reply;
